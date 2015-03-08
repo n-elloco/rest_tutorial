@@ -1,6 +1,9 @@
 # coding:utf-8
-"""
-Created on 07.03.2015
+from django.conf.urls import url
 
-@author: elloco
-"""
+from snippets import views
+
+urlpatterns = [
+    url(r'snippets/$', views.snippet_list),
+    url(r'snippets/(?P<pk>[0-9]+)/$', views.snippet_detail),
+]
